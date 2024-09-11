@@ -11,9 +11,12 @@ const types = {
     message:
       'A senha precisa ter pelo menos 1 caracter maiúsculo, 1 minúsculo e 1 dígito. Com no mínimo 8 caracteres',
   },
+  number: {
+    regex: /^\d+$/,
+    message: 'Utilize números apenas.',
+  },
 };
-
-export const useForm = () => {
+const useForm = () => {
   const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(null);
 
@@ -45,3 +48,5 @@ export const useForm = () => {
     onBlur: () => validate(value),
   };
 };
+
+export default useForm;
